@@ -1,0 +1,6 @@
+.integrate both the random generated and secret generated password
+
+-flask web application
+-if possible show real time prediction of each generated character of password
+- javascript to say welcome if thats an good idea
+-clipboard integration

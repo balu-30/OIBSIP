@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova Password Generator</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Nova Password Generator</h1>
+
+        <p id="welcome">
+            Generate your secure password here!!.
+        </p>
+
+        <form method="POST">
+
+            <label for="">Password Length:</label>
+
+            <input
+                type="number"
+                id="length"
+                name="length"
+                value="{{ length }}"
+                min="8"
+                max="50"
+                required
+            >
+
+            <button type="submit">
+                Generate Passwords
+            </button>
+
+        </form>
+
+
+        {% if random_key %}
+
+        <div class="result">
+
+            <h2>Random Module Password</h2>
+
+            <input
+                type="text"
+                id="randomKey"
+                value="{{ random_key }}"
+                readonly
+            >
+
+            <button type="button" onclick="copyPassword('randomKey')">
+                Copy
+            </button>
+
+        </div>
+
+
+        <div class="result">
+
+            <h2>Secrets Module Password</h2>
+
+            <input
+                type="text"
+                id="secureKey"
+                value="{{ secure_key }}"
+                readonly
+            >
+
+            <button type="button" onclick="copyPassword('secureKey')">
+                Copy
+            </button>
+
+        </div>
+
+
+        <div class="comparison">
+
+            <h2>Comparison</h2>
+
+            <p>
+                <strong>Random:</strong>
+                Uses Python's random module to generate the password.
+            </p>
+
+            <p>
+                <strong>Secrets:</strong>
+                Uses Python's secrets module to generate the password.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
