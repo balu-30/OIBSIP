@@ -1,5 +1,5 @@
 # Nova Weather app
--This python developed is used to fetch the weather data of the city entered in the blank by using the weather API.
+-This python project developed is used to fetch the weather data of the city entered in the blank by using the weather API.
 ## Features
 - Enter city name.
 - Fetch real-time weather using the OpenWeatherMap API.
